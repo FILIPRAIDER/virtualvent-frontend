@@ -1,15 +1,22 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { TbShoppingCartPlus } from "react-icons/tb";
+import { ProductProps } from "./interfaces/product";
 
-interface Props {
-  imagen: string;
-  nombre: string;
-  precio: number;
-}
+export const ProductCard = ({ imagen, nombre, precio }: ProductProps) => {
+  const router = useRouter();
 
-export const ProductCard = ({ imagen, nombre, precio }: Props) => {
+  const irADetalle = () => {
+    const nombreNormalizado = nombre.toLowerCase().replace(/\s+/g, "-"); // Convierte "Producto 1" en "producto-1"
+    router.push(`/products/${nombreNormalizado}`);
+  };
   return (
-    <div className="flex h-[360px] w-[240px] flex-col bg-white p-4 rounded-lg shadow-sm">
+    <div
+      onClick={irADetalle}
+      className="flex h-[360px] w-[240px] flex-col bg-white p-4 rounded-lg shadow-sm cursor-pointer"
+    >
       <div className="w-full h-[180px] overflow-hidden flex items-center justify-center bg-white shadow-sm rounded-md">
         <Image
           src={imagen}

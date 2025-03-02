@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 export const Navbar = () => {
   return (
-    <nav className="bg-[#349999] h-18 w-full z-10 absolute">
+    <nav className="bg-[#349999] h-18 w-full z-10">
       <div className="flex items-center justify-between h-full">
         <div className="relative flex items-center bg-[#A3D1D1] h-full w-[340px] rounded-br-[1000px] z-0">
           <div className="bg-white h-full absolute z-10 rounded-br-[1000px] w-[270px] flex items-center p-4">

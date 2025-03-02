@@ -6,7 +6,7 @@ export default function Home() {
     <main className="h-full">
       {/* <div className="fixed inset-0 z-[-1] h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_18%,#fff_50%,#349999_75%,#093F51_100%)]"></div> */}
 
-      <section className="h-full w-full flex">
+      <section className="h-screen w-full flex">
         <div className=" w-[50%] h-full flex items-center justify-center">
           <TextChanging />
         </div>
