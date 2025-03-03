@@ -15,7 +15,7 @@ export const ProductCard = ({ imagen, nombre, precio }: ProductProps) => {
   return (
     <div
       onClick={irADetalle}
-      className="flex h-[360px] w-[240px] flex-col bg-white p-4 rounded-lg shadow-sm cursor-pointer"
+      className="flex h-[360px] w-[240px] flex-col bg-white p-4 rounded-lg shadow-sm cursor-pointer border border-slate-300"
     >
       <div className="w-full h-[180px] overflow-hidden flex items-center justify-center bg-white shadow-sm rounded-md">
         <Image

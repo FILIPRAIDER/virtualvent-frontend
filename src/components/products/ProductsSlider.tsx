@@ -27,32 +27,34 @@ export const ProductsSlider = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-center w-full max-w-screen mx-auto">
-      <button
-        onClick={anterior}
-        className="absolute left-0 p-2 bg-white hover:bg-gray-400 cursor-pointer rounded-full shadow-sm"
-      >
-        <FaArrowLeft className="text-gray-600 text-3xl" />
-      </button>
+    <section className="w-[90%] xl:w-[98%] bg-[#eefafa] rounded-[8px] py-6 mx-auto">
+      <div className="relative flex items-center justify-center w-full max-w-screen mx-auto">
+        <button
+          onClick={anterior}
+          className="absolute left-0 p-2 bg-white hover:bg-gray-400 cursor-pointer rounded-full shadow-sm"
+        >
+          <FaArrowLeft className="text-gray-600 text-3xl" />
+        </button>
 
-      <div className="flex gap-4 overflow-hidden">
-        {productosActuales.map(({ id, imagen, nombre, precio }) => (
-          <ProductCard
-            key={id}
-            imagen={imagen}
-            nombre={nombre}
-            precio={precio}
-          />
-        ))}
+        <div className="flex gap-4 overflow-hidden">
+          {productosActuales.map(({ id, imagen, nombre, precio }) => (
+            <ProductCard
+              key={id}
+              imagen={imagen}
+              nombre={nombre}
+              precio={precio}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={siguiente}
+          className="absolute right-0 p-2 bg-white hover:bg-gray-400 rounded-full cursor-pointer shadow-sm"
+        >
+          <FaArrowRight className="text-gray-600 text-3xl" />
+        </button>
       </div>
-
-      <button
-        onClick={siguiente}
-        className="absolute right-0 p-2 bg-white hover:bg-gray-400 rounded-full cursor-pointer shadow-sm"
-      >
-        <FaArrowRight className="text-gray-600 text-3xl" />
-      </button>
-    </div>
+    </section>
   );
 };
 
