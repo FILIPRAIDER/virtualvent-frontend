@@ -50,7 +50,7 @@ export const Navbar = async () => {
         <div className="flex items-center space-x-6 text-white text-xl  h-full ">
           <FaBell className="cursor-pointer text-white hover:text-gray-200 w-[25px] h-[25px]" />
           <Link
-            href={`/shopping-cart`}
+            href={`/cart`}
             className="flex relative  w-12 rounded p-1 items-center gap"
           >
             <FaShoppingCart className="cursor-pointer text-white hover:text-gray-200 w-[25px] h-[25px]" />

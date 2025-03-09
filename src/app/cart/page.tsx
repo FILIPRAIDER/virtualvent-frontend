@@ -1,8 +1,7 @@
-import { ProductProps } from "@/components";
-
 import { cookies } from "next/headers";
 import { productos } from "../data/products";
 import { ItemCard, WidgetItem } from "@/shopping-cart";
+import { ProductProps } from "@/products";
 
 export const metadata = {
   title: "Carrito de compras",
@@ -27,10 +26,20 @@ const getProductsInCart = (cart: { [id: string]: number }) => {
   return productsInCart;
 };
 
+const getTotalCount = (cart: { [id: string]: number }): number => {
+  let items = 0;
+  Object.values(cart).forEach((value) => {
+    items += value as number;
+  });
+
+  return items;
+};
+
 export default async function CartPage() {
   const cookiesStore = await cookies();
   const cart = JSON.parse(cookiesStore.get("cart")?.value ?? "{}");
   const productsInCart = getProductsInCart(cart);
+  const totalItems = getTotalCount(cart);
 
   const totalToPay = productsInCart.reduce(
     (prev, current) => current.product.precio * current.quantity + prev,
@@ -38,27 +47,29 @@ export default async function CartPage() {
   );
 
   return (
-    <div>
-      <h1 className="text-5xl">Productos en el carrito</h1>
-      <hr className="mb-2 text-gray-200" />
-
-      <div className="flex flex-col sm:flex-row gap-2 w-full">
-        <div className="flex flex-col gap-2 w-full sm:w-8/12">
+    <div className="py-10 px-8">
+      <div className="flex flex-col sm:flex-row  w-full">
+        <div className="flex flex-col gap-4 md:w-[800px] sm:w-8/12">
           {productsInCart.map(({ product, quantity }) => (
             <ItemCard key={product.id} product={product} quantity={quantity} />
           ))}
         </div>
 
-        <div className="flex flex-col w-full  sm:w-4/12">
-          <WidgetItem title="Total a pagar">
-            <div className="mt-2 flex justify-center gap-4">
-              <h3 className="text-3xl font-bold text-gray-700">
-                ${(totalToPay * 1.15).toFixed(2)}
-              </h3>
+        <div className="flex flex-col w-full sm:w-4/12">
+          <WidgetItem title="Resumen de compra">
+            <div className="flex flex-col gap-2">
+              <p className="text-[#093F51] mt-4">
+                Numero de productos: {totalItems}
+              </p>
+              <div className="mt-2 flex justify-between gap-4">
+                <h3 className="text-xl text-gray-600 text-left">
+                  Total a pagar:
+                </h3>
+                <h3 className="text-2xl font-bold text-[#093F51]">
+                  ${totalToPay.toFixed(2)}
+                </h3>
+              </div>
             </div>
-            <span className="font-bold text-center text-gray-500">
-              Impuestos 15%: ${(totalToPay * 0.15).toFixed(2)}
-            </span>
           </WidgetItem>
         </div>
       </div>

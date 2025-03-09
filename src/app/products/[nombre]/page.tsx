@@ -1,8 +1,7 @@
 import { use } from "react"; // Importamos use() para desempaquetar params
 import { productos } from "@/app/data/products";
-import { ProductInfo } from "@/components";
-import { ImageGallery } from "@/components/products/ImageGallery";
 import { notFound } from "next/navigation";
+import { ImageGallery, ProductInfo } from "@/products";
 
 interface ProductPageProps {
   params: Promise<{ nombre: string }>; // params es una Promise

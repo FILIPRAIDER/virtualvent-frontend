@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TbShoppingCartPlus } from "react-icons/tb";
-import { ProductProps } from "./interfaces/product";
+import { ProductProps } from "../interfaces/product";
 import { addProductToCart } from "@/shopping-cart";
 import { useRouter } from "next/navigation";
 

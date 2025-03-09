@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 
-import { IoAddCircleOutline, IoRemove } from "react-icons/io5";
-
 import { useRouter } from "next/navigation";
-import { ProductProps } from "@/components";
+
 import { addProductToCart, removeSingleItemFromCart } from "../actions/action";
+import { ProductProps } from "@/products";
+import { IoAddOutline, IoRemove } from "react-icons/io5";
+import Link from "next/link";
 
 interface Props {
   product: ProductProps;
@@ -15,6 +16,7 @@ interface Props {
 
 export const ItemCard = ({ product, quantity }: Props) => {
   const router = useRouter();
+  const nombreNormalizado = product.nombre.toLowerCase().replace(/\s+/g, "-");
 
   function onAddToCart() {
     addProductToCart(product.id);
@@ -27,51 +29,49 @@ export const ItemCard = ({ product, quantity }: Props) => {
   }
 
   return (
-    <div className="flex items-center shadow rounded-lg w-full bg-gray-800 border-gray-100">
+    <div className="flex items-center rounded-lg w-[590px] bg-white border border-gray-300 mx-auto h-34">
       {/* Product Image */}
-      <div className="p-2">
+      <div className="w-34 h-34 flex items-center justify-center items-center border-r border-gray-200">
         <Image
-          width={200}
-          height={200}
-          className="rounded"
+          width={96} // Ajusta según necesidad
+          height={96}
+          className="rounded object-contain w-full h-full border"
           src={product.imagen}
           alt={product.nombre}
         />
       </div>
 
       {/* Title */}
-      <div className="px-5 pb-5 w-full flex flex-col mt-2">
-        <a href="#">
-          <h3 className="font-semibold text-xl tracking-tight text-white">
-            {product.nombre} -{" "}
-            <small className="text-sm">${product.precio.toFixed(2)}</small>
+      <div className=" w-[55%] flex flex-col py-2 text-black  h-full">
+        <Link href={`/products/${nombreNormalizado}`}>
+          <h3 className="font-normal text-[18px] tracking-tight  px-2">
+            {product.nombre}
           </h3>
-        </a>
-
-        {/* Price and Add to Cart */}
-        <div className="flex flex-col items-start justify-between">
-          <span className="text-gray-900 dark:text-white">
-            Cantidad: {quantity}
+        </Link>
+        <div className=" flex gap-2 px-2 py-2 text-black h-full">
+          <p className="text-[16px] font-semibold">Total: </p>
+          <span className="font-bold">
+            ${(product.precio * quantity).toFixed(2)}
           </span>
-          <span className="font-bold text-white">
-            Total: ${(product.precio * quantity).toFixed(2)}
-          </span>
+        </div>
+        <div className=" flex justify-between px-2 py-2 text-blue-300 font-semibold">
+          <button className="text-[10px]">Remover</button>
         </div>
       </div>
 
-      <div className="flex p-5 items-center justify-center">
-        <button
-          onClick={onAddToCart}
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          <IoAddCircleOutline size={25} />
-        </button>
-        <span className="text-2xl text-white mx-10">{quantity}</span>
+      <div className="flex p-5 items-center justify-center h-10 w-[100px] border border-gray-200 rounded-[8px]">
         <button
           onClick={onRemoveItem}
-          className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+          className="font-medium border-r border-gray-200 text-sm  text-center cursor-pointer"
         >
           <IoRemove size={25} />
+        </button>
+        <span className="text-[18px] mx-4">{quantity}</span>
+        <button
+          onClick={onAddToCart}
+          className="font-normal text-center border-l border-gray-200 cursor-pointer"
+        >
+          <IoAddOutline size={25} />
         </button>
       </div>
     </div>

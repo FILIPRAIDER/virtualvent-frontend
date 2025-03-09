@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-import { ProductProps } from "./interfaces/product";
+import { ProductProps } from "../interfaces/product";
 import { TbShoppingCartPlus } from "react-icons/tb";
 
 export const ProductInfo = (product: ProductProps) => {

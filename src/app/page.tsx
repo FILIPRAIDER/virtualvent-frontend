@@ -1,4 +1,5 @@
-import { ProductsSlider, TextChanging } from "@/components";
+import { TextChanging } from "@/components";
+import { ProductsSlider } from "@/products";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
             alt="Home"
             width={600}
             height={600}
-            className="h-[500px] border -mt-20"
+            className="h-[500px]  -mt-20"
           />
         </div>
       </section>
