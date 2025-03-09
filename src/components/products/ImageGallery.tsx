@@ -9,7 +9,7 @@ export const ImageGallery = () => {
   return (
     <div className="w-full max-w-[500px] h-[450px] flex flex-col items-center gap-4">
       {/* Imagen Principal */}
-      <div className="w-full aspect-square bg-white border border-gray-200 rounded-lg shadow-md flex justify-center items-center overflow-hidden">
+      <div className="w-full aspect-square bg-white border border-gray-200 rounded-sm flex justify-center items-center overflow-hidden">
         <Image
           width={500}
           height={500}

@@ -19,10 +19,10 @@ export const ProductInfo = (product: ProductProps) => {
       <p className="mt-2 text-green-700 font-medium">Disponible</p>
       <p className="text-sm">Cantidad: 1 unidad - 5 disponibles</p>
 
-      <button className="w-full bg-[#093F51] text-white py-2 font-semibold rounded-md mt-4">
+      <button className="w-full bg-[#093F51] cursor-pointer text-white py-2 font-semibold rounded-sm mt-4">
         Comprar Ahora
       </button>
-      <button className="w-full  flex items-center justify-center gap-2 bg-[#349999] text-white py-2 rounded-md mt-2">
+      <button className="w-full  flex items-center justify-center cursor-pointer gap-2 bg-[#349999] text-white py-2 rounded-sm mt-2">
         <TbShoppingCartPlus />
         Agregar al carrito
       </button>

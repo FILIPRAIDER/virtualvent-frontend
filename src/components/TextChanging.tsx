@@ -24,7 +24,7 @@ export function TextChanging(): React.JSX.Element {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-start text-black px-6 w-full max-w-[70ch]">
+    <div className="flex flex-col justify-center items-start text-black px-6 w-full max-w-[70ch] -mt-20">
       <h1 className="text-3xl font-normal">
         Descubre VirtualVent, el lugar donde
       </h1>

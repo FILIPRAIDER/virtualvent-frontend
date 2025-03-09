@@ -8,8 +8,8 @@ const options = [
 
 export const SubNavbar = () => {
   return (
-    <div className="w-full bg-[#F2F2F2] h-[45px] flex items-center items-center px-8 z-30">
-      <ul className="text-[18px] text-slate-700 flex flex-row gap-8 font-semibold">
+    <div className="w-full bg-[#F2F2F2] h-[33px] flex items-center items-center px-8 z-30">
+      <ul className="text-[15px] text-slate-700 flex flex-row gap-8 font-semibold">
         {options.map(({ title, path }) => (
           <Link key={title} href={path}>
             {title}

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { SubNavbar } from "./SubNavbar";
 export const Navbar = () => {
   return (
-    <nav className="bg-[#349999] w-full z-10 ">
+    <nav className="bg-[#349999] w-full z-10">
       <div className="flex items-center justify-between h-18">
         <div className="relative flex items-center bg-[#A3D1D1] h-full w-[340px] rounded-br-[1000px] z-0">
           <div className="bg-white h-full absolute z-10 rounded-br-[1000px] w-[270px] flex items-center p-4">
@@ -40,9 +40,8 @@ export const Navbar = () => {
         </div>
       </div>
       {/* Aqui va la subnavbar */}
-      <nav>
-        <SubNavbar />
-      </nav>
+
+      <SubNavbar />
     </nav>
   );
 };
