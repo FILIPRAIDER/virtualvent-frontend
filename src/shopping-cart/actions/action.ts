@@ -9,18 +9,14 @@ export const getCookieCart = (): { [id: string]: number } => {
   return {};
 };
 
-export const addProductToCart = (id?: string) => {
+export const addProductToCart = (id?: string, cantidad: number = 1) => {
   if (!id) {
     console.error("Intentando agregar un producto sin ID válido.");
     return;
   }
 
   const cookieCart = getCookieCart();
-  if (cookieCart[id]) {
-    cookieCart[id] += 1;
-  } else {
-    cookieCart[id] = 1;
-  }
+  cookieCart[id] = (cookieCart[id] || 0) + cantidad;
 
   setCookie("cart", JSON.stringify(cookieCart));
 };

@@ -50,6 +50,12 @@ export default async function CartPage() {
     <div className="py-10 px-8">
       <div className="flex flex-col sm:flex-row  w-full">
         <div className="flex flex-col gap-4 md:w-[800px] sm:w-8/12">
+          {productsInCart.length === 0 && (
+            <div className="flex flex-col items-center justify-center w-full h-[300px] bg-white rounded-lg shadow-md">
+              <p className="text-gray-600">No hay productos en el carrito</p>
+            </div>
+          )}
+
           {productsInCart.map(({ product, quantity }) => (
             <ItemCard key={product.id} product={product} quantity={quantity} />
           ))}

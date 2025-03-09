@@ -13,7 +13,7 @@ export default function Home() {
         </div>
         <div className="w-[40%] h-full flex items-center justify-center">
           <Image
-            src="/puesto.svg"
+            src="/Puesto.svg"
             alt="Home"
             width={600}
             height={600}

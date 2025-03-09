@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { ProductCard } from "./ProductCard";
 import { productos } from "@/app/data/products";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 export const ProductsSlider = () => {
   const [pagina, setPagina] = useState(0);
@@ -28,12 +28,12 @@ export const ProductsSlider = () => {
 
   return (
     <section className="w-[90%] xl:w-[98%] bg-[#eefafa] rounded-[8px] py-6 mx-auto">
-      <div className="relative flex items-center justify-center w-full max-w-screen mx-auto">
+      <div className="relative flex items-center justify-center w-fit  mx-auto">
         <button
           onClick={anterior}
-          className="absolute left-0 p-2 bg-white hover:bg-gray-400 cursor-pointer rounded-full shadow-sm"
+          className="absolute -left-8 p-2 bg-white hover:bg-gray-400 cursor-pointer rounded-full shadow-sm "
         >
-          <FaArrowLeft className="text-gray-600 text-3xl" />
+          <GoArrowLeft className="text-gray-600 text-3xl" />
         </button>
 
         <div className="flex gap-4 overflow-hidden">
@@ -51,9 +51,9 @@ export const ProductsSlider = () => {
 
         <button
           onClick={siguiente}
-          className="absolute right-0 p-2 bg-white hover:bg-gray-400 rounded-full cursor-pointer shadow-sm"
+          className="absolute -right-8 p-2 bg-white hover:bg-gray-400 rounded-full cursor-pointer shadow-sm"
         >
-          <FaArrowRight className="text-gray-600 text-3xl" />
+          <GoArrowRight className="text-gray-600 text-3xl" />
         </button>
       </div>
     </section>

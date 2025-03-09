@@ -26,7 +26,7 @@ export const Navbar = async () => {
           <div className="bg-white h-full absolute z-10 rounded-br-[1000px] w-[270px] flex items-center p-4">
             <Link href="/" className="flex items-center space-x-2">
               <Image
-                src="/logo.svg"
+                src="/Logo.svg"
                 alt="VirtualVent"
                 width={72}
                 height={42}

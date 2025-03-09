@@ -1,8 +1,20 @@
+"use client";
+
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { ProductProps } from "../interfaces/product";
 import { TbShoppingCartPlus } from "react-icons/tb";
+import { ProductProps } from "../interfaces/product";
+import { addProductToCart } from "@/shopping-cart";
+import { useRouter } from "next/navigation";
 
 export const ProductInfo = (product: ProductProps) => {
+  const [cantidadSeleccionada, setCantidadSeleccionada] = useState(1);
+  const router = useRouter();
+  const handleAddToCart = () => {
+    addProductToCart(product.id, cantidadSeleccionada);
+    router.refresh();
+  };
+
   return (
     <div className="bg-white flex flex-col p-6 gap-4 border border-gray-200 rounded-[8px] shadow-md h-[500px]">
       <h1 className="text-2xl font-normal">{product.nombre}</h1>
@@ -19,7 +31,11 @@ export const ProductInfo = (product: ProductProps) => {
       <p className="mt-2 text-green-700 font-medium">Disponible</p>
       <p className="text-gray-800">
         <span>Cantidad: </span>
-        <select className="border border-gray-200 p-1 rounded text-gray-600">
+        <select
+          className="border border-gray-200 p-1 rounded text-gray-600"
+          value={cantidadSeleccionada}
+          onChange={(e) => setCantidadSeleccionada(Number(e.target.value))}
+        >
           {Array.from({ length: product.cantidad }, (_, i) => i + 1).map(
             (num) => (
               <option key={num} value={num}>
@@ -34,7 +50,10 @@ export const ProductInfo = (product: ProductProps) => {
       <button className="w-full bg-[#093F51] cursor-pointer text-white py-2 font-semibold rounded-sm mt-4">
         Comprar Ahora
       </button>
-      <button className="w-full  flex items-center justify-center cursor-pointer gap-2 bg-[#349999] text-white py-2 rounded-sm mt-2">
+      <button
+        onClick={handleAddToCart}
+        className="w-full flex items-center justify-center cursor-pointer gap-2 bg-[#349999] text-white py-2 rounded-sm mt-2"
+      >
         <TbShoppingCartPlus />
         Agregar al carrito
       </button>

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
         hostname: "img.freepik.com",
       },
     ],
+    unoptimized: true,
   },
 };
 
