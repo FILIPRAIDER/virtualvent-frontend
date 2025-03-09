@@ -1,4 +1,4 @@
-import { ProductProps } from "@/components";
+import { ProductProps } from "@/products";
 
 export const productos: ProductProps[] = [
   {
