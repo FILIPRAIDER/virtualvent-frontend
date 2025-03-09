@@ -37,9 +37,11 @@ export const ProductsSlider = () => {
         </button>
 
         <div className="flex gap-4 overflow-hidden">
-          {productosActuales.map(({ id, imagen, nombre, precio }) => (
+          {productosActuales.map(({ id, cantidad, imagen, nombre, precio }) => (
             <ProductCard
               key={id}
+              id={id}
+              cantidad={cantidad}
               imagen={imagen}
               nombre={nombre}
               precio={precio}
