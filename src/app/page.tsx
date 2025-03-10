@@ -5,23 +5,28 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      {/* <div className="fixed inset-0 z-[-1] h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_18%,#fff_50%,#349999_75%,#093F51_100%)]"></div> */}
-
-      <section className="h-screen w-full flex">
-        <div className=" w-[50%] h-full flex items-center justify-center">
+      <section className="h-screen w-full flex flex-col-reverse md:flex-row items-center justify-center px-4 md:px-12">
+        {/* Sección de texto */}
+        <div className="w-full md:w-1/2 flex items-center justify-center h-full">
           <TextChanging />
         </div>
-        <div className="w-[40%] h-full flex items-center justify-center">
+
+        {/* Sección de imagen */}
+        <div className="w-full md:w-1/2 flex items-center justify-center mt-10 md:mt-0">
           <Image
             src="/Puesto.svg"
             alt="Home"
-            width={600}
-            height={600}
-            className="h-[500px]  -mt-20"
+            width={500}
+            height={500}
+            className="h-[250px] md:h-[400px] w-auto"
           />
         </div>
       </section>
-      <ProductsSlider />
+
+      {/* Slider de productos */}
+      <div className="py-10">
+        <ProductsSlider />
+      </div>
     </main>
   );
 }
