@@ -16,7 +16,7 @@ export default function PuntosPage() {
         Conoce nuestros puntos de distribucion
       </h2>
       <div className="w-full flex flex-col text-center">
-        <h3 className="text-xl font-normal text-[#093F51]">
+        <h3 className="text-[16px] md:text-xl font-normal text-[#093F51]">
           Encuentra el punto de distribución más cercano a ti
         </h3>
         <div className="w-[350px] md:w-5/6 mt-4 p-4 h-[450px] rounded-lg flex flex-col text-left gap-2 justify-center bg-white mx-auto shadow-md">

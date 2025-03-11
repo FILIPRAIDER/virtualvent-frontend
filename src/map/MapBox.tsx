@@ -13,7 +13,7 @@ export const MapBox = () => {
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: "mapbox://styles/mapbox/streets-v12",
       center: [-75.8688645, 8.7662868], // Coordenadas (longitud, latitud)
       zoom: 15,
     });

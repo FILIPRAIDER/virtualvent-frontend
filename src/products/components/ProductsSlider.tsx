@@ -37,12 +37,12 @@ export const ProductsSlider = () => {
   };
 
   return (
-    <section className="w-[90%] xl:w-[98%] bg-[#eefafa] rounded-[8px] py-6 mx-auto overflow-hidden">
+    <section className="w-[90%] xl:w-fit md:px-10 bg-[#eefafa] rounded-[8px] py-6 mx-auto overflow-hidden">
       <div className="relative flex items-center justify-center w-full mx-auto">
         {!isMobile && (
           <button
             onClick={anterior}
-            className="absolute left-0 p-2 bg-white hover:bg-gray-400 cursor-pointer rounded-full shadow-sm"
+            className="absolute -left-8 p-2 bg-white hover:bg-gray-400 cursor-pointer rounded-full shadow-sm"
           >
             <GoArrowLeft className="text-gray-600 text-3xl" />
           </button>
@@ -74,7 +74,7 @@ export const ProductsSlider = () => {
         {!isMobile && (
           <button
             onClick={siguiente}
-            className="absolute right-0 p-2 bg-white hover:bg-gray-400 rounded-full cursor-pointer shadow-sm"
+            className="absolute -right-8 p-2 bg-white hover:bg-gray-400 rounded-full cursor-pointer shadow-sm"
           >
             <GoArrowRight className="text-gray-600 text-3xl" />
           </button>
