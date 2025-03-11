@@ -67,6 +67,7 @@ export const Navbar = () => {
           />
           <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#349999] cursor-pointer" />
         </div>
+        {/* Menú lateral deslizable */}
         <div className="flex gap-2 mr-2">
           <MobileMenu>
             <div>
@@ -77,7 +78,6 @@ export const Navbar = () => {
           <Cart />
         </div>
       </div>
-      {/* Menú lateral deslizable */}
 
       {/* Aqui va la subnavbar */}
       <SubNavbar />

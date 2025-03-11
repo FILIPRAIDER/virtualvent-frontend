@@ -18,7 +18,7 @@ export default function Home() {
             alt="Home"
             width={500}
             height={500}
-            className="h-[250px] md:h-[400px] w-auto"
+            className="h-[350px] md:h-[500px] w-auto md:mb-10"
           />
         </div>
       </section>
