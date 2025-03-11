@@ -70,9 +70,12 @@ export const Navbar = () => {
         {/* Menú lateral deslizable */}
         <div className="flex gap-2 mr-2">
           <MobileMenu>
-            <div>
-              <FaBell className="cursor-pointer text-blue-700 hover:text-gray-200 w-[25px] h-[25px]" />
-              <FaUserCircle className="cursor-pointer hover:text-gray-200 text-blue-700 w-[40px] h-[40px]" />
+            <div
+              key="user-menu"
+              className="flex items-center justify-center h-19 w-full bg-white gap-4"
+            >
+              <FaBell className="cursor-pointer text-[#349999] hover:text-gray-200 w-[40px] h-[40px]" />
+              <FaUserCircle className="cursor-pointer text-[#349999] hover:text-gray-200 w-[40px] h-[40px]" />
             </div>
           </MobileMenu>
           <Cart />

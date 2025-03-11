@@ -29,9 +29,9 @@ export const ItemCard = ({ product, quantity }: Props) => {
   }
 
   return (
-    <div className="flex items-center rounded-lg w-[590px] bg-white border border-gray-300 mx-auto h-34">
+    <div className="flex items-center rounded-lg w-full md:w-[590px] bg-white border border-gray-300 mx-auto min-h-34 md:h-34 px-2 md:px-0">
       {/* Product Image */}
-      <div className="w-34 h-34 flex items-center justify-center items-center border-r border-gray-200">
+      <div className="w-24 h-24 md:w-34 md:h-34 flex items-center justify-center items-center border-r border-gray-200">
         <Image
           width={96} // Ajusta según necesidad
           height={96}
@@ -44,7 +44,7 @@ export const ItemCard = ({ product, quantity }: Props) => {
       {/* Title */}
       <div className=" w-[55%] flex flex-col py-2 text-black  h-full">
         <Link href={`/products/${nombreNormalizado}`}>
-          <h3 className="font-normal text-[18px] tracking-tight  px-2">
+          <h3 className="font-normal text-[14px] md:text-[18px] tracking-tight  px-2">
             {product.nombre}
           </h3>
         </Link>
