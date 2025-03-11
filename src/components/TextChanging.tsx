@@ -24,11 +24,11 @@ export function TextChanging(): React.JSX.Element {
   }, []);
 
   return (
-    <div className="flex flex-col text-left justify-center items-start text-black md:px-6 w-full md:max-w-[70ch] -mt-20">
-      <h1 className="text-left text-2xl md:text-3xl font-normal">
+    <div className="flex flex-col text-left gap-2 justify-center items-start text-black md:px-6 w-full md:max-w-[80ch] -mt-24">
+      <h1 className="text-center md:text-left text-4xl font-normal">
         Descubre VirtualVent, el lugar donde
       </h1>
-      <div className="relative h-[80px] w-full overflow-hidden flex items-center">
+      <div className="relative h-[80px] text-center md:text-left w-full overflow-hidden flex items-center">
         <AnimatePresence mode="wait">
           <motion.h1
             key={texts[index]}
@@ -36,7 +36,7 @@ export function TextChanging(): React.JSX.Element {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl md:text-3xl font-semibold text-[#349999] absolute w-full"
+            className="text-3xl md:text-3xl font-normal text-[#349999] absolute w-full"
           >
             {texts[index]}
           </motion.h1>
