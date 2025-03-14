@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -10,10 +10,10 @@ mapboxgl.accessToken =
 export const MapBox = () => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
-  const [userLocation, setUserLocation] = useState<[number, number] | null>(
-    null
-  );
-  const centerCoordinates: [number, number] = [-75.8688645, 8.7662868]; // Coordenadas iniciales
+  const centerCoordinates: [number, number] = useMemo(
+    () => [-75.8688645, 8.7662868],
+    []
+  ); // Coordenadas iniciales
 
   useEffect(() => {
     // Verificar si el contenedor del mapa está disponible
@@ -47,7 +47,6 @@ export const MapBox = () => {
             position.coords.longitude,
             position.coords.latitude,
           ];
-          setUserLocation(userCoords);
 
           // Añadir un marcador para la ubicación del usuario
           new mapboxgl.Marker({ color: "blue" })
@@ -70,7 +69,7 @@ export const MapBox = () => {
         mapRef.current = null;
       }
     };
-  }, []);
+  }, [centerCoordinates]); // Se agregó `centerCoordinates` como dependencia
 
   const getRoute = async (
     start: [number, number],
