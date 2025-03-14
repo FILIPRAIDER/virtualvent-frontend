@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import Link from "next/link";
 import { options } from "./SubNavbar";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface MobileMenuProps {
   children: React.ReactNode;
@@ -20,13 +20,34 @@ export const MobileMenu = ({ children }: MobileMenuProps) => {
         className="text-3xl text-white flex gap-2 mr-2"
       >
         <motion.div
-          key={menuOpen ? "close" : "menu"} // Clave única para que Framer Motion anime correctamente
           initial={{ rotate: 90, scale: 0.8, opacity: 0 }}
           animate={{ rotate: 0, scale: 1, opacity: 1 }}
           exit={{ rotate: -90, scale: 0.8, opacity: 0 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
         >
-          {menuOpen ? <IoClose /> : <IoMenu />}
+          <AnimatePresence mode="wait">
+            {menuOpen ? (
+              <motion.div
+                key="close"
+                initial={{ rotate: 90, scale: 0.8, opacity: 0 }}
+                animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                exit={{ rotate: -90, scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <IoClose />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.1 }}
+              >
+                <IoMenu />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </button>
 

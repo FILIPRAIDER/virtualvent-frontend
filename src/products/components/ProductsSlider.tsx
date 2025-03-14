@@ -37,7 +37,7 @@ export const ProductsSlider = () => {
   };
 
   return (
-    <section className="w-[90%] xl:w-fit md:px-10 bg-[#eefafa] rounded-[8px] py-6 mx-auto overflow-hidden">
+    <section className="w-[90%] xl:w-fit md:px-10 bg-white rounded-[8px] py-6 mx-auto overflow-hidden">
       <div className="relative flex items-center justify-center w-full mx-auto">
         {!isMobile && (
           <button

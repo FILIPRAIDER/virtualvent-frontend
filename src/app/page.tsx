@@ -24,7 +24,8 @@ export default function Home() {
       </section>
 
       {/* Slider de productos */}
-      <div className="py-10">
+      <div className="py-10 flex flex-col gap-6">
+        <ProductsSlider />
         <ProductsSlider />
       </div>
     </main>
