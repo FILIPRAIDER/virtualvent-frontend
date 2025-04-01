@@ -1,10 +1,10 @@
 "use client";
 import { productos } from "@/app/data/products";
 import Image from "next/image";
-import { useState } from "react";
+// import { useState } from "react";
 
 export const ImageGallery = () => {
-  const [mainImage, setMainImage] = useState(productos[0].imagen);
+  // const [mainImage, setMainImage] = useState(productos[0].imagen);
 
   return (
     <div className="w-full max-w-[500px] h-[450px] flex flex-col items-center gap-4">
@@ -13,7 +13,7 @@ export const ImageGallery = () => {
         <Image
           width={500}
           height={500}
-          src={mainImage}
+          src={productos[0].imagen}
           alt="Producto"
           className="w-full h-full object-contain"
         />

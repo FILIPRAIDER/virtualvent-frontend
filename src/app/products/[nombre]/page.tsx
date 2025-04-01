@@ -1,7 +1,7 @@
 import { use } from "react"; // Importamos use() para desempaquetar params
 import { productos } from "@/app/data/products";
 import { notFound } from "next/navigation";
-import { ImageGallery, ProductInfo } from "@/products";
+import { ProductInfo } from "@/products";
 import Image from "next/image";
 
 interface ProductPageProps {
