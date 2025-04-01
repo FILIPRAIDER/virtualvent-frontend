@@ -17,7 +17,7 @@ export const ProductCard = ({ id, imagen, nombre, precio }: ProductProps) => {
   };
 
   return (
-    <div className="flex flex-col bg-white p-4 rounded-lg shadow-sm border border-slate-300 h-[310px] min-w-[180px] md:h-[350px] md:w-[210px]">
+    <div className="flex flex-col bg-white p-4 rounded-lg shadow-sm border border-slate-300 h-[310px] min-w-[180px] md:h-[330px] md:w-[210px]">
       {/* Imagen y Nombre dentro del Link */}
       <Link
         href={`/products/${nombreNormalizado}`}

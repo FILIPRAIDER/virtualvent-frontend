@@ -20,7 +20,7 @@ export const ImageGallery = () => {
       </div>
 
       {/* Miniaturas en una sola fila */}
-      <div className="w-full flex gap-2 overflow-x-auto h-24">
+      {/* <div className="w-full flex gap-2 overflow-x-auto h-24">
         {productos.map(({ id, imagen }) => (
           <button
             key={id}
@@ -36,7 +36,7 @@ export const ImageGallery = () => {
             />
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
